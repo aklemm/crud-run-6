@@ -10,7 +10,7 @@ return new class extends Migration
     {
         Schema::create('items', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('owner')->references('id')->on('users');
+            $table->foreignId('created_by')->references('id')->on('users');
             $table->string('name');
             $table->string('description')->nullable();
             $table->softDeletes();

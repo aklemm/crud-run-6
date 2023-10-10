@@ -10,7 +10,7 @@ class ItemFactory extends Factory
     public function definition(): array
     {
         return [
-            'owner' => User::factory()->create()->id,
+            'created_by' => User::factory()->create()->id,
             'name' => fake()->words(3, true),
             'description' => fake()->text(),
         ];

@@ -16,7 +16,7 @@
                 {{ $item->description }}
             </td>
             <td>
-                {{ $item->ownerName->name }}
+                {{ $item->created_by_user->name }}
             </td>
         </tr>
     @endforeach

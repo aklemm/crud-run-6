@@ -13,13 +13,13 @@ class Item extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'owner',
+        'created_by',
         'name',
         'description',
     ];
 
-    public function ownerName(): BelongsTo
+    public function created_by_user(): BelongsTo
     {
-        return $this->belongsTo(User::class, 'owner');
+        return $this->belongsTo(User::class, 'created_by');
     }
 }
