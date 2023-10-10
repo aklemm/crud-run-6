@@ -18,7 +18,7 @@ class Item extends Model
         'description',
     ];
 
-    public function owner(): BelongsTo
+    public function ownerName(): BelongsTo
     {
         return $this->belongsTo(User::class, 'owner');
     }
