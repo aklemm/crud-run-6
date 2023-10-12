@@ -8,7 +8,7 @@ use Tests\TestCase;
 
 class CreateControllerTest extends TestCase
 {
-    public function does_create_route_exist_and_load(): void
+    public function test_does_create_route_exist_and_load(): void
     {
         $response = $this->get('/items/create');
 
