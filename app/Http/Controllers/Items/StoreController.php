@@ -3,15 +3,20 @@
 namespace App\Http\Controllers\Items;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
+use App\Http\Requests\Items\StoreRequest;
+use App\Models\Item;
+use Illuminate\Http\RedirectResponse;
 
 class StoreController extends Controller
 {
-    /**
-     * Handle the incoming request.
-     */
-    public function __invoke(Request $request)
+    public function __invoke(StoreRequest $request): RedirectResponse
     {
-        //
+        Item::create([
+            'name' => $request->get('name'),
+            'description' => $request->get('description'),
+            'created_by' => $request->user()->id,
+        ]);
+
+        return redirect()->route('items.index');
     }
 }
