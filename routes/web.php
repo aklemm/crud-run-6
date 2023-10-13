@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Items\IndexController as ItemsIndexController;
+use App\Http\Controllers\Items\CreateController as ItemsCreateController;
+use App\Http\Controllers\Items\StoreController as ItemsStoreController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,6 +31,8 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     Route::get('/items', ItemsIndexController::class)->name('items.index');
+    Route::get('/items/create', ItemsCreateController::class)->name('items.create');
+    Route::post('items', ItemsStoreController::class)->name('items.store');
 
 });
 
